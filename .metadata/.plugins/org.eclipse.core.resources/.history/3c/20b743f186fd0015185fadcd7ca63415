@@ -1,0 +1,39 @@
+package com.sjf.dao;
+
+import java.util.List;
+
+import com.sjf.po.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public void add(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List queryAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User queryByID(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

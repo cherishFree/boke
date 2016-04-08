@@ -1,0 +1,68 @@
+package com.sjf.action;
+
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class Register extends ActionSupport{
+	
+	private String username;//用户名
+	private String password;//密码
+	private String repassword;//确认密码
+	private String nickname;//昵称
+	private String question;//密保问题
+	private String answer;//密保答案
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRepassword() {
+		return repassword;
+	}
+	public void setRepassword(String repassword) {
+		this.repassword = repassword;
+	}
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	
+	public void validate() {
+		super.validate();
+	}
+	
+	public String execute() throws Exception {
+		System.out.println(this.username);
+		System.out.println(this.password);
+		System.out.println(this.repassword);
+		System.out.println(this.nickname);
+		System.out.println(this.question);
+		System.out.println(this.answer);
+		return SUCCESS;
+	}
+	
+	
+}

@@ -1,0 +1,9 @@
+package com.sjf.action;
+
+public class Register {
+	private String username;
+	private String password;
+	private String repassword;
+	private String nikename;
+	private String question;
+}

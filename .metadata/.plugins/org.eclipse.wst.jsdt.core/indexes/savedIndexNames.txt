@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+D:\boke\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3666893704.index
+677668629.index
+2880653078.index
+1901419911.index
+3143325655.index
+1869311371.index
+4197658090.index

@@ -1,0 +1,6 @@
+package com.sjf.service;
+
+public interface UserService {
+	//ÓÃ»§×¢²á
+	public void registerUser();
+}

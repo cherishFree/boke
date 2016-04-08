@@ -1,0 +1,11 @@
+package com.sjf.service;
+
+import com.sjf.po.User;
+
+public class UserServiceImpl implements UserService{
+
+	public void registerUser(User user) {
+		
+	}
+	
+}
