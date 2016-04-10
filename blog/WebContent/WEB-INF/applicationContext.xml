@@ -64,4 +64,11 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 			<ref bean="userService"/>
 		</property>
 	</bean>
+	
+	<!-- 配置LoginAction -->
+	<bean id="loginAction" class="com.sjf.action.Login">
+		<property name="userService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
 </beans>

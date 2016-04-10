@@ -31,9 +31,9 @@ window.event.srcElement.className="lt0";
 					<td width="278">&nbsp;</td>
 					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">北风博客首页</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../register.html">新博客注册</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="register.jsp">新博客注册</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">随笔</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="login.jsp">博客登录</a></td>
 					<td class="ltsep">|</td>
 					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">图片</a></td>
 					<td class="ltsep">|</td>
