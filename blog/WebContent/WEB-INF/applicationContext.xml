@@ -34,6 +34,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 		<property name="mappingResources">
 			<list>
 				<value>com/sjf/po/User.hbm.xml</value>
+				<value>com/sjf/po/BlogInfo.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -59,7 +60,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	</bean>
 	
 	<!-- 配置RegisterAction -->
-	<bean id="registerAction" class="com.sjf.action.Register">
+	<bean id="registerAction" class="com.sjf.action.Register" scope="prototype">
 		<property name="userService">
 			<ref bean="userService"/>
 		</property>
@@ -69,6 +70,34 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	<bean id="loginAction" class="com.sjf.action.Login">
 		<property name="userService">
 			<ref bean="userService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置DAO组件 -->
+	<bean id="blogInfoDAO" class="com.sjf.dao.BlogInfoDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/> 
+		</property>
+	</bean>
+	
+	<!-- 配置业务逻辑组件 -->
+	<bean id="blogInfoService" class="com.sjf.service.BlogInfoServiceImpl">
+		<property name="blogInfoDAO">
+			<ref bean="blogInfoDAO"/>
+		</property>
+	</bean>
+	
+	<!-- 配置EditBlogInfo Action -->
+	<bean id="editBlogInfo" class="com.sjf.action.EditBlogInfo" scope="prototype">
+		<property name="blogInfoService">
+			<ref bean="blogInfoService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置GetBlogInfo Action -->
+	<bean id="GetBlogInfo" class="com.sjf.action.GetBlogInfo" scope="prototype">
+		<property name="blogInfoService">
+			<ref bean="blogInfoService"/>
 		</property>
 	</bean>
 </beans>

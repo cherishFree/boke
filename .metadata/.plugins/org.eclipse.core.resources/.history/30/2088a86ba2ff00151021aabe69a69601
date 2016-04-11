@@ -1,0 +1,16 @@
+package com.sjf.action;
+
+import com.sjf.service.BlogInfoService;
+
+public class GetBlogInfo {
+	public BlogInfoService blogInfoService;
+
+	public BlogInfoService getBlogInfoService() {
+		return blogInfoService;
+	}
+
+	public void setBlogInfoService(BlogInfoService blogInfoService) {
+		this.blogInfoService = blogInfoService;
+	}
+	
+}

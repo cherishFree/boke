@@ -1,0 +1,19 @@
+package com.sjf.dao;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import antlr.collections.List;
+
+import com.sjf.po.BlogInfo;
+
+public class BlogInfoDAOImpl extends HibernateDaoSupport implements BlogInfoDAO{
+
+	public void save(BlogInfo info) {
+		this.getHibernateTemplate().saveOrUpdate(info);//既可以实现save()功能，也可以实现update()功能；
+	}
+
+	public BlogInfo get(String username) {
+		List list = this.getHibernateTemplate().find("select bloginfo BlofInfo bloginfo where username=?",username);
+	}
+
+}

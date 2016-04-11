@@ -1,9 +1,13 @@
 package com.sjf.action;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sjf.po.User;
 import com.sjf.service.UserService;
@@ -47,8 +51,14 @@ public class Login extends ActionSupport {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		
 		if(userService.loginUser(user)){
-			request.setAttribute("url", "userIndex.jsp");
+			request.setAttribute("url", "user/getBlogInfo.action");
 			request.setAttribute("info", "登陆成功");
+			//将用户名保存到session范围中
+//			HttpSession session = request.getSession();
+//			session.setAttribute("username", username);
+			
+			Map session =ActionContext.getContext().getSession();
+			session.put("username", username);
 			return SUCCESS;
 		}else{
 			request.setAttribute("url", "login.jsp");

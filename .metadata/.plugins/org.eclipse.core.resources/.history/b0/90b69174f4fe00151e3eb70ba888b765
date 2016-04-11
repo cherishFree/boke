@@ -1,0 +1,17 @@
+package com.sjf.dao;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.sjf.po.BlogInfo;
+
+public class BlogInfoDAOImpl extends HibernateDaoSupport implements BlogInfoDAO{
+
+	public void save(BlogInfo info) {
+		this.getHibernateTemplate().saveOrUpdate(info);
+	}
+
+	public BlogInfo get() {
+		return null;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.sjf.service;
+
+public class BlogInfoServiceImpl implements BlogInfoService{
+
+	public void setBlogInfo() {
+		
+	}
+
+	public void getBlogInfo() {
+		
+	}
+	
+}

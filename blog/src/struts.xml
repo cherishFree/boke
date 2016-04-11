@@ -17,6 +17,15 @@
 			<result name="success">/success.jsp</result>
 			<result name="error">/error.jsp</result>
 			<result name="input">/login.jsp</result>
+		</action>
+		<action name="editBlogInfo" class="editBlogInfo">
+			<result name="success" type="chain">getBlogInfo</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/user/editbloginfo.jsp</result>
 		</action>	
+		<action name="getBlogInfo" class="GetBlogInfo">
+			<result name="success">/user/editbloginfo.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
 	</package>
 </struts>
