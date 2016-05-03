@@ -1,9 +1,0 @@
-package com.sjf.service;
-
-public interface BlogInfoService {
-	
-	//设置博客个性化内容
-	public void setBlogInfo();
-	public void getBlogInfo();
-	
-}

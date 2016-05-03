@@ -1,0 +1,20 @@
+package com.sjf.rss;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class CreateRss {
+	
+	public void publishRss(String filePath){
+		//向文件中写内容
+		try {
+			//文件输出流
+			FileWriter fw = new FileWriter(filePath);
+			//
+			BufferedWriter bw = new BufferedWriter(fw);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

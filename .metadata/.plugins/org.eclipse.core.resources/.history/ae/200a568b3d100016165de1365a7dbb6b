@@ -1,0 +1,12 @@
+package com.sjf.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ShowPhoto extends ActionSupport{
+
+	public String execute() throws Exception {
+		return super.execute();
+	}
+
+	
+}

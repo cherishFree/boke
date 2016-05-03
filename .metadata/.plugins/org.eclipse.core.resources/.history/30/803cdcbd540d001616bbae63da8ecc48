@@ -1,0 +1,11 @@
+package com.sjf.service;
+
+import com.sjf.po.Critique;
+
+public class CritiqueServiceImpl implements CritiqueService{
+
+	public void addCritique(Critique critique) {
+		
+	}
+
+}

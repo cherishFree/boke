@@ -1,0 +1,8 @@
+package com.sjf.rss;
+
+public class MainClass {
+	public static void main(String[] args) {
+		String filePath = "D:\\Tomcat 7.0\\webapps\\blog\\rss.xml";
+		CreateRss.publishRss(filePath);
+	}
+}

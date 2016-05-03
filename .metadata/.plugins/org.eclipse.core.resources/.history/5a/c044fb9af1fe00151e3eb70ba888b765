@@ -1,7 +1,0 @@
-package com.sjf.service;
-
-public interface BlogInfoService {
-	public void setBlogInfo();
-	public void getBlogInfo();
-	
-}

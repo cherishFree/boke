@@ -1,7 +1,0 @@
-package com.sjf.action;
-
-import com.sjf.service.BlogInfoService;
-
-public class GetBlogInfo {
-	public BlogInfoService blogInfoService;
-}

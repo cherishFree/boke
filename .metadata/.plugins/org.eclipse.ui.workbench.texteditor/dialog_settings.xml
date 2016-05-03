@@ -13,8 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
+		<item value="showArticle" key="selection"/>
 		<list key="findhistory">
-			<item value="hibernateTemplate"/>
+			<item value="showarticle"/>
+			<item value="show"/>
+			<item value="bei"/>
+			<item value="FileI"/>
+			<item value="FileIm"/>
+			<item value="File"/>
+			<item value="upload"/>
+			<item value="upoud"/>
 		</list>
 		<list key="replacehistory">
 		</list>

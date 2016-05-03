@@ -1,0 +1,8 @@
+package com.sjf.rss;
+
+public class CreateRss {
+	
+	public void publishRss(){
+		
+	}
+}

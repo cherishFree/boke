@@ -1,0 +1,59 @@
+package com.sjf.action;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.sjf.po.Article;
+import com.sjf.service.ArticleService;
+import com.sjf.service.DianJiLiangService;
+
+public class ShowArticle extends ActionSupport{
+	//业务逻辑组件属性
+	private ArticleService articleService;
+	//id属性
+	private int id;
+	//点击量的业务逻辑属性
+	private DianJiLiangService dianJiLiangService;
+	
+	public DianJiLiangService getDianJiLiangService() {
+		return dianJiLiangService;
+	}
+
+	public void setDianJiLiangService(DianJiLiangService dianJiLiangService) {
+		this.dianJiLiangService = dianJiLiangService;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+
+	public String execute() throws Exception {
+		//按id查询文章
+		Article article = articleService.showArticle(id);
+		//点击量增加
+		article.setHasread(article.getHasread() + 1);
+		//将更新的article保存到数据表中
+		articleService.addArticle(article);
+		//将文章设置到request范围
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.setAttribute("article", article);
+		return this.SUCCESS;
+	}
+	
+	
+}

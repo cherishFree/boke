@@ -1,0 +1,11 @@
+package com.sjf.rss;
+
+import java.io.FileWriter;
+
+public class CreateRss {
+	
+	public void publishRss(String filePath){
+		//向文件中写内容
+		FileWriter fw = new FileWriter(filePath);
+	}
+}

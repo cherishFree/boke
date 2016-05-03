@@ -35,6 +35,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 			<list>
 				<value>com/sjf/po/User.hbm.xml</value>
 				<value>com/sjf/po/BlogInfo.hbm.xml</value>
+				<value>com/sjf/po/Article.hbm.xml</value>
+				<value>com/sjf/po/DianJiLiang.hbm.xml</value>
+				<value>com/sjf/po/Critique.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -96,6 +99,92 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	
 	<!-- 配置GetBlogInfo Action -->
 	<bean id="GetBlogInfo" class="com.sjf.action.GetBlogInfo" scope="prototype">
+		<property name="blogInfoService">
+			<ref bean="blogInfoService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置ArticleDAO组件 -->
+	<bean id="articleDAO" class="com.sjf.dao.ArticleDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/> 
+		</property>
+	</bean>
+	
+	<!-- 配置业务逻辑组件ArticleService -->
+	<bean id="articleService" class="com.sjf.service.ArticleServiceImpl">
+		<property name="articleDAO">
+			<ref bean="articleDAO"/>
+		</property>
+		<property name="critiqueDAO">
+			<ref bean="critiqueDAO"/>
+		</property>
+	</bean>
+	
+	<!-- 配置AddArticle Action -->
+	<bean id="addArticle" class="com.sjf.action.AddArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置showUserAllArticle Action -->
+	<bean id="showUserAllArticle" class="com.sjf.action.ShowUserAllArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置showAllArticle Action -->
+	<bean id="showAllArticle" class="com.sjf.action.ShowAllArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置dianJiLiangDAO组件 -->
+	<bean id="dianJiLiangDAO" class="com.sjf.dao.DianJiLiangDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/> 
+		</property>
+	</bean>
+	<!-- 配置业务逻辑组件dianJiLiangService -->
+	<bean id="dianJiLiangService" class="com.sjf.service.DianJiLiangServiceImpl">
+		<property name="dianJiLiangDAO">
+			<ref bean="dianJiLiangDAO"/>
+		</property>
+	</bean>
+	
+	<!-- 配置critiqueDAO组件 -->
+	<bean id="critiqueDAO" class="com.sjf.dao.CritiqueDAOImpl">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate"/> 
+		</property>
+	</bean>
+	<!-- 配置业务逻辑组件critiqueService -->
+	<bean id="critiqueService" class="com.sjf.service.CritiqueServiceImpl">
+		<property name="critiqueDAO">
+			<ref bean="critiqueDAO"/>
+		</property>
+	</bean>
+	<!-- 配置AddCritiqueAction -->
+	<bean id="addCritique" class="com.sjf.action.AddCritique" scope="prototype">
+		<property name="critiqueService">
+			<ref bean="critiqueService"/>
+		</property>
+	</bean>
+	
+	<!-- 配置showArticle Action -->
+	<bean id="showArticle" class="com.sjf.action.ShowArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+		<property name="dianJiLiangService">
+			<ref bean="dianJiLiangService"/>
+		</property>
+		<property name="critiqueService">
+			<ref bean="critiqueService"/>
+		</property>
 		<property name="blogInfoService">
 			<ref bean="blogInfoService"/>
 		</property>

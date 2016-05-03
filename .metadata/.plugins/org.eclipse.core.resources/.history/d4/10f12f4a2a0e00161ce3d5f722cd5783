@@ -1,0 +1,34 @@
+package com.sjf.action;
+
+import java.io.File;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class PhotoUpload extends ActionSupport{
+	private File myFile;
+	private String myFileContentType;
+	private String myFileFileName;
+	public File getMyFile() {
+		return myFile;
+	}
+	public void setMyFile(File myFile) {
+		this.myFile = myFile;
+	}
+	public String getMyFileContentType() {
+		return myFileContentType;
+	}
+	public void setMyFileContentType(String myFileContentType) {
+		this.myFileContentType = myFileContentType;
+	}
+	public String getMyFileFileName() {
+		return myFileFileName;
+	}
+	public void setMyFileFileName(String myFileFileName) {
+		this.myFileFileName = myFileFileName;
+	}
+	
+	public String execute() throws Exception {
+		return super.execute();
+	}
+	
+}

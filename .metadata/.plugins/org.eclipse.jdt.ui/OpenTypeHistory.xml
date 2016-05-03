@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=blog/src&lt;com.sjf.dao{UserDAO.java[UserDAO" modifiers="513" timestamp="1460105722937"/>
-<typeInfo handle="=blog/D:\/Blog\/boke\/blog\/WebContent\/WEB-INF\/lib\/xwork-2.0.4.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="33" timestamp="1460128704434"/>
-<typeInfo handle="=blog/D:\/Blog\/boke\/blog\/WebContent\/WEB-INF\/lib\/spring.jar&lt;org.springframework.orm.hibernate3.support(HibernateDaoSupport.class[HibernateDaoSupport" modifiers="1057" timestamp="1460128703427"/>
+<typeInfo handle="=blog/D:\/Blog\/boke\/blog\/WebContent\/WEB-INF\/lib\/xwork-2.0.4.jar&lt;com.opensymphony.xwork2(ActionSupport.class[ActionSupport" modifiers="1" timestamp="1460503609045"/>
+<typeInfo handle="=blog/D:\/Blog\/boke\/blog\/WebContent\/WEB-INF\/lib\/spring.jar&lt;org.springframework.orm.hibernate3.support(HibernateDaoSupport.class[HibernateDaoSupport" modifiers="1025" timestamp="1460503608490"/>
+<typeInfo handle="=blog/D:\/Blog\/boke\/blog\/WebContent\/WEB-INF\/lib\/java-core-2.4.1.jar&lt;net.fckeditor.requestcycle(UserPathBuilder.class[UserPathBuilder" modifiers="1537" timestamp="1460503607298"/>
 </typeInfoHistroy>

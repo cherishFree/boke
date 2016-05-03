@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sjf.po.Article">
+		<id name="id">
+			<generator class="increment"></generator><!-- class="increment"表示是一个递增的主键 -->
+		</id>
+		<property name="title"></property>
+		<property name="content"></property>
+		<property name="username"></property>
+		<property name="date"></property>
+		<property name="hasread"></property>
+	</class>	
+</hibernate-mapping>

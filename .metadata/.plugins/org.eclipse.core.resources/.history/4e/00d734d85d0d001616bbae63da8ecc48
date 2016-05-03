@@ -1,0 +1,25 @@
+package com.sjf.dao;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.sjf.fenye.Page;
+import com.sjf.po.Critique;
+
+public class CritiqueDAOImpl extends HibernateDaoSupport implements CritiqueDAO{
+	
+
+	public void addCritique(Critique critique) {
+		this.getHibernateTemplate().save(critique);
+	}
+
+	public int queryCritiqueCount(int AId) {
+		return 0;
+	}
+
+	public List<Critique> queryByPage(int AId, Page page) {
+		return null;
+	}
+
+}

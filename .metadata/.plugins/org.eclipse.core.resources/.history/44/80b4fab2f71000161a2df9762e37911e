@@ -1,0 +1,5 @@
+package com.sjf.interceptor;
+
+public class UserInterceptor {
+
+}

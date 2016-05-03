@@ -44,19 +44,40 @@ window.event.srcElement.className="lt0";
 	<tr height="31">
 		<td background="../image/line.jpg">
 			<table width="1000" border="0" cellpadding="0" cellspacing="0">
+				<%
+					String username = request.getParameter("username");
+					if(username == null || "".equals(username)) {
+				 %>
+				
 				<tr height="20" align="center">
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">北风博客首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../showAllArticle.action">博客网首页</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">用户首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showUserAllArticle.action">用户首页</a></td>
 					<td class="ltsep">|</td>
 					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="editbloginfo.jsp">个性化设置</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">日志</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="addArticle.jsp">写日志</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">相册</a></td>
-					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../index.html">留言板</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showPhoto.action">相册</a></td>
 				</tr>
+				<%
+					} else {
+				 %>
+				 
+				 	<tr height="20" align="center">
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../showAllArticle.action">博客网首页</a></td>
+					<td class="ltsep">|</td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showUserAllArticle.action?username=${param.username }">用户首页</a></td>
+					<td class="ltsep">|</td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="editbloginfo.jsp">个性化设置</a></td>
+					<td class="ltsep">|</td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="addArticle.jsp">写日志</a></td>
+					<td class="ltsep">|</td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showPhoto.action">相册</a></td>
+				</tr>
+				 <%
+				 	}
+				  %>
 			</table>
 		</td>
 	</tr>

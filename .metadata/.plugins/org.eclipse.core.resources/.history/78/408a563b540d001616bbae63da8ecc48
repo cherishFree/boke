@@ -1,0 +1,6 @@
+package com.sjf.service;
+
+public interface CritiqueService {
+	//Ìí¼ÓÆÀÂÛ
+	public void addCritique(Critique critique);
+}

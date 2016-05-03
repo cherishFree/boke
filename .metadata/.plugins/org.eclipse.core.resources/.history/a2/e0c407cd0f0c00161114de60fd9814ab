@@ -1,0 +1,11 @@
+package com.sjf.po;
+
+import java.util.Date;
+
+public class DianJiLiang {
+	private int id;
+	private int Aid;
+	private String ip;
+	private Date time;
+	
+}

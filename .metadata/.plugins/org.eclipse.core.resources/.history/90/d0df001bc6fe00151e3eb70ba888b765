@@ -1,6 +1,0 @@
-package com.sjf.dao;
-
-
-public interface BlogInfoDAO  {
-
-}

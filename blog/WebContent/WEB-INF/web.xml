@@ -4,13 +4,32 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<servlet>
+      <servlet-name>Connector</servlet-name>
+        <servlet-class>
+          com.sjf.fckeditor.ConnectorServlet
+      </servlet-class>
+      <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>Connector</servlet-name>
+      <url-pattern>
+        /user/fckeditor/editor/filemanager/connectors/*
+      </url-pattern>
+    </servlet-mapping>
+	
 	<filter><!-- 写过滤器 -->
 		<filter-name>struts2</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
-		<url-pattern>/*</url-pattern><!-- 过滤所有的web下的文件 -->
+		<url-pattern>*.action</url-pattern><!-- 过滤所有的web下的文件 -->
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.jsp</url-pattern><!-- 过滤所有的web下的文件 -->
 	</filter-mapping>
 	<listener><!-- 添加spring监听器 -->
 		<listener-class>

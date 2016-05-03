@@ -23,7 +23,7 @@
 		<form id="Form1" action="editBlogInfo.action" method="post">
 			<table width="1000" cellpadding="0" cellspacing="0" border="0" align="center">
 				<tr height="100">
-					<td colspan="3">&nbsp;</td>
+					<td colspan="2">&nbsp;</td>
 				</tr>
 				<tr>
 					<td align="right" width="300" valign="top"><img src="image/editbloginfo.gif"></td>
@@ -31,7 +31,7 @@
 					<td valign="top">
 						<table width="500" border="1" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF;BORDER-RIGHT:#cccccc 1px solid; BORDER-TOP:#cccccc 1px solid; BORDER-LEFT:#cccccc 1px solid; BORDER-BOTTOM:#cccccc 1px solid; BORDER-COLLAPSE:collapse">
 							<tr height="30">
-								<td colspan="3" align="center" background="image/l-bg1.jpg"><span class="STYLE1">个性化设置</span></td>
+								<td colspan="2" align="center" background="image/l-bg1.jpg"><span class="STYLE1">个性化设置</span></td>
 							</tr>
 							<tr height="30">
 								<td align="right">博客标题</td>
@@ -44,7 +44,7 @@
 								<td width=><s:fielderror><s:param>idiograph</s:param></s:fielderror></td>
 							</tr>
 							<tr height="30">
-								<td colspan="3" align="center"><input type="submit" value="提交" name="submit" /><input type="reset" value="重置" name="reset" /></td>
+								<td colspan="2" align="center"><input type="submit" value="提交" name="submit" /><input type="reset" value="重置" name="reset" /></td>
 							</tr>
 						</table>
 					</td>

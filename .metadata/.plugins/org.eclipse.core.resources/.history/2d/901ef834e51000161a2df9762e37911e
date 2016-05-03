@@ -1,0 +1,8 @@
+package com.ibeifeng.rss;
+
+public class MainClass {
+	public static void main(String[] args) {
+		String filePath = "E:\\Tomcat 6.0\\webapps\\blog\\rss.xml";
+		CreateRss.publishRss(filePath);
+	}
+}
