@@ -1,7 +1,0 @@
-package com.sjf.dao;
-
-import java.util.Date;
-
-public interface DianJiLiangDAO {
-	public int queryByAId(int AId, String IP, Date time);
-}

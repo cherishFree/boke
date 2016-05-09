@@ -13,7 +13,7 @@
 		<script type="text/javascript" src="greybox/AJS_fx.js"></script>
 		<script type="text/javascript" src="greybox/gb_scripts.js"></script>
 		<link href="greybox/gb_styles.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="image/style.css">
+		<link rel="stylesheet" href="user/image/style.css">
 	</HEAD>
 	<body leftMargin="0" topMargin="0" MS_POSITIONING="GridLayout">
 		<jsp:include page="include/MainHeader.jsp"></jsp:include>

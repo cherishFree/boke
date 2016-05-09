@@ -38,6 +38,28 @@
 			<interceptor-ref name="userInterceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
+		
+		<action name="updateArticle" class="updateArticle">
+			<result name="success">/user/updateArticle.jsp</result>
+			<result name="error">/error.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="updateArticleAction" class="updateArticleAction">
+			<result name="success" type="chain">showUserAllArticle</result>
+			<result name="error">/error.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="deleteArticle" class="deleteArticle">
+			<result name="success" type="chain">showUserAllArticle</result>
+			<result name="error">/error.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
 		<action name="showUserAllArticle" class="showUserAllArticle">
 			<result name="success">/user/showUserAllArticle.jsp</result>
 		</action>

@@ -20,4 +20,9 @@ public interface ArticleDAO {
 	public List<Article> queryAllByPage(Page page);
 	//°´id²éÑ¯ÎÄÕÂ
 	public Article queryById(int id);
+	
+	public void delete(int id);
+	
+	public void update(int id, Article article);
+	
 }

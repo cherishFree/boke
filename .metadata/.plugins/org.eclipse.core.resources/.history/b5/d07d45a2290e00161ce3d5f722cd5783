@@ -1,7 +1,0 @@
-package com.sjf.action;
-
-import java.io.File;
-
-public class PhotoUpload {
-	private File myFile;
-}

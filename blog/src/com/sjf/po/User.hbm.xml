@@ -11,5 +11,6 @@
 		<property name="nickname"></property>
 		<property name="question"></property>
 		<property name="answer"></property>
+		<property name="address"></property>
 	</class>	
 </hibernate-mapping>

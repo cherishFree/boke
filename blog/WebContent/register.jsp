@@ -60,6 +60,11 @@
 								<td><s:fielderror><s:param>answer</s:param></s:fielderror></td>
 							</tr>
 							<tr height="30">
+								<td align="right">地址&nbsp;</td>
+								<td><input type="text" name="address"/>*</td>
+								<td><s:fielderror><s:param>address</s:param></s:fielderror></td>
+							</tr>
+							<tr height="30">
 								<td colspan="3" align="center"><input type="submit" value="提交"/>
 								<input type="reset" value="重置"/>
 								</td>

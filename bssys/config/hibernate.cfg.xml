@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+<session-factory>
+
+	<!-- 1，数据库连接信息 -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5InnoDBDialect
+	</property>
+	<!-- 
+		<property name="connection.url">jdbc:mysql:///itcastoa0720</property>
+		<property name="connection.driver_class">com.jdbc.mysql.Driver</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+	-->
+
+	<!-- 2，其他配置 -->
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	
+	<!-- 导入JBPM4.4的映射文件 -->
+	<mapping resource="jbpm.repository.hbm.xml" />
+	<mapping resource="jbpm.execution.hbm.xml" />
+	<mapping resource="jbpm.history.hbm.xml" />
+	<mapping resource="jbpm.task.hbm.xml" />
+	<mapping resource="jbpm.identity.hbm.xml" />
+
+	<!-- 3，导入映射文件 -->
+	<mapping resource="leifeng/bs/domain/User.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Role.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Department.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Privilege.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Forum.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Topic.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Reply.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/ApplicationTemplate.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/Application.hbm.xml" />
+	<mapping resource="leifeng/bs/domain/ApproveInfo.hbm.xml" />
+	
+</session-factory>
+
+</hibernate-configuration>

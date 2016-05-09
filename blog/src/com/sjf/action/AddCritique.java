@@ -4,14 +4,24 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sjf.po.Article;
 import com.sjf.po.Critique;
+import com.sjf.service.ArticleService;
 import com.sjf.service.CritiqueService;
 
 public class AddCritique extends ActionSupport{
 	private CritiqueService critiqueService;
+	private ArticleService articleService;
 	private int id;
 	private String content;
-	
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -41,7 +51,6 @@ public class AddCritique extends ActionSupport{
 		String username = (String) session.get("username");
 		if(username == null  || "".equals(username)){
 			username="ÄäÃû";
-			
 		}
 		Critique critique = new Critique();
 		critique.setAId(id);
@@ -49,6 +58,9 @@ public class AddCritique extends ActionSupport{
 		critique.setUsername(username);
 		// ±£´æÆÀÂÛ
 		this.critiqueService.addCritique(critique);
+		Article article =articleService.showArticle(id);
+		article.setComment(article.getComment()+1);
+		articleService.addArticle(article);
 		return this.SUCCESS;
 	}
 	

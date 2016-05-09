@@ -17,7 +17,7 @@ window.event.srcElement.className="lt0";
 }
 //-->
 </script>
-<link rel="stylesheet" href="image/style.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/user/image/style.css"/>
 <style type="text/css">
 <!--
 .blogtitle {
@@ -36,13 +36,13 @@ window.event.srcElement.className="lt0";
 <body>
 <table width="1000" border="0" cellpadding="0" cellspacing="0" align="center">
 	<tr>
-		<td background="image/bg1.jpg" height="150">
+		<td background="${pageContext.request.contextPath}/user/image/bg1.jpg" height="150">
 		<!-- 博客标题位置-->
 		<span class="blogtitle">${sessionScope.blogtitle}</span><br />
 	  <span class="idiograph">${sessionScope.idiograph}     </span>		<!-- 个性签名位置-->		</td>
 	</tr>
 	<tr height="31">
-		<td background="../image/line.jpg">
+		<td background="${pageContext.request.contextPath}/user/image/line.jpg">
 			<table width="1000" border="0" cellpadding="0" cellspacing="0">
 				<%
 					String username = request.getParameter("username");
@@ -50,9 +50,9 @@ window.event.srcElement.className="lt0";
 				 %>
 				
 				<tr height="20" align="center">
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../showAllArticle.action">博客网首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="${pageContext.request.contextPath}/showAllArticle.action">博客网首页</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showUserAllArticle.action">用户首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="${pageContext.request.contextPath}/showUserAllArticle.action">用户首页</a></td>
 					<td class="ltsep">|</td>
 					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="editbloginfo.jsp">个性化设置</a></td>
 					<td class="ltsep">|</td>
@@ -65,9 +65,9 @@ window.event.srcElement.className="lt0";
 				 %>
 				 
 				 	<tr height="20" align="center">
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="../showAllArticle.action">博客网首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="${pageContext.request.contextPath}/showAllArticle.action">博客网首页</a></td>
 					<td class="ltsep">|</td>
-					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="showUserAllArticle.action?username=${param.username }">用户首页</a></td>
+					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="${pageContext.request.contextPath}/showUserAllArticle.action?username=${param.username }">用户首页</a></td>
 					<td class="ltsep">|</td>
 					<td class="lt0" onmouseenter="mhEnter()" onmouseleave="mhLeave()"><a href="editbloginfo.jsp">个性化设置</a></td>
 					<td class="ltsep">|</td>

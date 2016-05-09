@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 		<title>全部文章</title>
 		<link rel="stylesheet" href="image/style.css" />
+		
 	</head>
 
 	<body topmargin="0" leftmargin="0" bgcolor="#F3F3F3">
@@ -31,13 +32,14 @@
 											<td bgcolor="#FFFFFF">
 												<font class="chinesefont105main"> <!-- 文章标题  --> 
 												<a href="user/showArticle.action?username=<s:property value='#art.username'/>&id=<s:property value='#art.id'/>"><s:property value="#art.title"/></a>
+												
 													<hr size='1' noshade color='#CCCCCC'> <br>
 													<div align='right' class='smalltxt' height='32px'>
 														<!-- 发表时间 -->
 														发表于:
 														<s:date name="#art.date"/>
 														<!-- 评论与点击数 -->
-														|评论()|点击(<s:property value="#art.hasread"/>)|作者:<s:property value="#art.username"/>
+														|评论(<s:property value="#art.comment"/>)|点击(<s:property value="#art.hasread"/>)|作者:<s:property value="#art.username"/>
 													</div> </font>
 											</td>
 										</tr>

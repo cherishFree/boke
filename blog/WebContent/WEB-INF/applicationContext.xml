@@ -128,6 +128,28 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 		</property>
 	</bean>
 	
+	<!-- 配置updateArticle Action -->
+	<bean id="updateArticle" class="com.sjf.action.UpdateArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
+	
+	<!-- 配置updateArticleAction -->
+	<bean id="updateArticleAction" class="com.sjf.action.UpdateArticleAction" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>	
+	
+	<!-- 配置DeleteArticle Action -->
+	<bean id="deleteArticle" class="com.sjf.action.DeleteArticle" scope="prototype">
+		<property name="articleService">
+			<ref bean="articleService"/>
+		</property>
+	</bean>
+	
 	<!-- 配置showUserAllArticle Action -->
 	<bean id="showUserAllArticle" class="com.sjf.action.ShowUserAllArticle" scope="prototype">
 		<property name="articleService">
@@ -141,6 +163,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 			<ref bean="articleService"/>
 		</property>
 	</bean>
+	
 	
 	<!-- 配置dianJiLiangDAO组件 -->
 	<bean id="dianJiLiangDAO" class="com.sjf.dao.DianJiLiangDAOImpl">
@@ -171,6 +194,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	<bean id="addCritique" class="com.sjf.action.AddCritique" scope="prototype">
 		<property name="critiqueService">
 			<ref bean="critiqueService"/>
+		</property>
+		<property name="articleService">
+			<ref bean="articleService"/>
 		</property>
 	</bean>
 	

@@ -1,0 +1,118 @@
+package com.sjf.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+
+
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import com.sjf.fenye.Page;
+import com.sjf.po.Article;
+
+
+public class ArticleDAOImpl extends HibernateDaoSupport implements ArticleDAO{
+
+	public void add(Article article) {
+		this.getHibernateTemplate().saveOrUpdate(article);
+	}
+
+	public List<Article> queryUserAll(String username) {
+		List<Article> list = this.getHibernateTemplate().find("select art from Article art where art.username=?",username);
+		return list;
+	}
+
+	public int queryUserAllCount(String username) {
+		List find = this.getHibernateTemplate().find("select count(*) from Article art where art.username=?",username);
+		return ((Long)find.get(0)).intValue();
+	}
+
+	public List<Article> queryByPage(final String username, final Page page) {
+		return this.getHibernateTemplate().executeFind(new HibernateCallback(){
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query query = session.createQuery("select art from Article art where art.username=?");
+				//设置参数
+				query.setParameter(0, username);
+				//设置每页显示多少个，也就是设置最大结果
+				query.setMaxResults(page.getEveryPage());
+				//设置起点
+				query.setFirstResult(page.getBeginIndex());
+				return query.list();
+			}
+		
+		});
+		
+	}
+
+	public int queryAllCount() {
+		List find = this.getHibernateTemplate().find("select count(*) from Article art");
+		return ((Long)find.get(0)).intValue();
+	}
+
+	public List<Article> queryAllByPage(final Page page) {
+		return this.getHibernateTemplate().executeFind(new HibernateCallback(){
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				Query query = session.createQuery("select art from Article art order by art.date desc");
+				//设置每页显示多少个，也就是设置最大结果
+				query.setMaxResults(page.getEveryPage());
+				//设置起点
+				query.setFirstResult(page.getBeginIndex());
+				return query.list();
+			}
+		
+		});
+	}
+
+	public Article queryById(int id) {
+		List find = this.getHibernateTemplate().find("select art from Article art where art.id=?",id);
+		return (Article) find.get(0);
+	}
+
+	@Override
+	public void delete(int id) {
+		List find = this.getHibernateTemplate().find("select art from Article art where art.id=?",id);
+		Article article=(Article)find.get(0);
+
+		Object obj=(Object)article;
+		Session session=getSession();
+		Transaction tran = session.beginTransaction();
+		
+		if(obj!=null){
+			session.delete(obj);
+			tran.commit();
+		}
+		
+	}
+
+	@Override
+	public void update(int id, Article article) {
+		List find = this.getHibernateTemplate().find("select art from Article art where art.id=?",id);
+		Article article1=(Article)find.get(0);
+		article1.setTitle(article.getTitle());
+		article1.setComment(article.getComment());
+		article1.setContent(article.getContent());
+		article1.setDate(article.getDate());
+		article1.setHasread(article.getHasread());
+		
+		
+		Object obj=(Object)article;
+		Session session=getSession();
+		Transaction tran = session.beginTransaction();
+		String id1 = Integer.toString(id);
+		if(obj!=null){
+			session.update(id1, obj);
+			tran.commit();
+		}
+	}
+
+	
+
+}

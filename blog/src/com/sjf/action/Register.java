@@ -15,6 +15,15 @@ public class Register extends ActionSupport{
 	private String nickname;//昵称
 	private String question;//密保问题
 	private String answer;//密保答案
+	private String address;//地址
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	private UserService userService;
 	
 	public UserService getUserService() {
@@ -72,7 +81,7 @@ public class Register extends ActionSupport{
 		user.setNickname(nickname);
 		user.setQuestion(question);
 		user.setAnswer(answer);
-		
+		user.setAddress(address);
 		//获得request
 		HttpServletRequest request = ServletActionContext.getRequest();
 		

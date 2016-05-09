@@ -1,0 +1,28 @@
+package com.sjf.dao;
+
+import java.util.List;
+
+import com.sjf.fenye.Page;
+import com.sjf.po.Article;
+
+public interface ArticleDAO {
+	//定义一个add方法用来保存博客文章
+	public void add(Article article);
+	//定义一个queryUserAll,用来取出用户所有的文章
+	public List<Article> queryUserAll(String username);
+	//获取用户文章记录总数
+	public int queryUserAllCount(String username);
+	//按分页信息查询用户记录
+	public List<Article> queryByPage(String username,Page page);
+	//获得所有文章的总记录数
+	public int queryAllCount();
+	//按分页信息查询记录
+	public List<Article> queryAllByPage(Page page);
+	//按id查询文章
+	public Article queryById(int id);
+	
+	public void delete(int id);
+	
+	public void update(Article article);
+	
+}

@@ -20,4 +20,8 @@ public interface ArticleService {
 	//获得评论数
 	public int getCritiqueCount(int AId);
 	
+	public void delete(int id);
+	
+	public void update(int id, Article article);
+	
 }

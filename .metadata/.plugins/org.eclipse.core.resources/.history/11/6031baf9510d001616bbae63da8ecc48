@@ -1,9 +1,0 @@
-package com.sjf.po;
-
-public class Crtique {
-	private int id;
-	private int AId;
-	private String content;
-	private String username;
-
-}

@@ -12,5 +12,6 @@
 		<property name="username"></property>
 		<property name="date"></property>
 		<property name="hasread"></property>
+		<property name="comment"></property>
 	</class>	
 </hibernate-mapping>

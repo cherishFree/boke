@@ -1,8 +1,0 @@
-package com.sjf.service;
-
-import com.sjf.po.Critique;
-
-public interface CritiqueService {
-	//Ìí¼ÓÆÀÂÛ
-	public void addCritique(Critique critique);
-}

@@ -12,7 +12,7 @@
 	<validator type="regex">
 		<param name="fieldName">username</param>
 		<param name="expression"><![CDATA[(\w{6,20})]]></param>
-		<message>用户名长度必须为6至20之间</message>
+		<message>用户名长度必须英文或数字且字数为6至20之间</message>
 	</validator>
 
 	<validator type="requiredstring">
@@ -53,11 +53,11 @@
 
 	<validator type="regex">
 		<param name="fieldName">nickname</param>
-		<param name="expression"><![CDATA[([\u4e00-\u9fa5]{2,20})]]></param>
+		<param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{2,20})]]></param>
 		<message>昵称长度必须为2至20之间</message>
 	</validator>
 	
-		<validator type="requiredstring">
+	<validator type="requiredstring">
 		<param name="fieldName">answer</param>
 		<param name="trim">true</param>
 		<message>必须输入密码保护答案</message>
@@ -65,9 +65,15 @@
 
 	<validator type="regex">
 		<param name="fieldName">answer</param>
-		<param name="expression"><![CDATA[([\u4e00-\u9fa5]{5,50})]]></param>
+		<param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{5,50})]]></param>
 		<message>密码保护答案长度必须为5至50之间</message>
 	</validator>
+	<validator type="requiredstring">
+		<param name="fieldName">address</param>
+		<param name="trim">true</param>
+		<message>必须输入地址</message>
+	</validator>
+	
 </validators>
 
 

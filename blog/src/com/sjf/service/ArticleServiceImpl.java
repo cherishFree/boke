@@ -62,4 +62,14 @@ public class ArticleServiceImpl implements ArticleService{
 		return critiqueDAO.queryCritiqueCount(AId);
 	}
 
+	@Override
+	public void delete(int id) {
+		articleDAO.delete(id);
+	}
+
+	public void update(int id, Article article) {
+		articleDAO.update(id, article);
+		System.out.println("updateService");
+	}
+
 }

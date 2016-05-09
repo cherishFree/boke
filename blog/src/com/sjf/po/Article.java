@@ -9,6 +9,14 @@ public class Article {
 	private String username;
 	private Date date;
 	private int hasread;
+	private int comment;
+	
+	public int getComment() {
+		return comment;
+	}
+	public void setComment(int comment) {
+		this.comment = comment;
+	}
 	public int getHasread() {
 		return hasread;
 	}

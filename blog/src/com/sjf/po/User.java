@@ -6,6 +6,14 @@ public class User {
 	private String nickname;
 	private String question;
 	private String answer;
+	private String address;
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getUsername() {
 		return username;
 	}

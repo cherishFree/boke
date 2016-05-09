@@ -11,7 +11,8 @@
 
 	<validator type="regex">
 		<param name="fieldName">blogtitle</param>
-		<param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{4,20})]]></param>
+		<!-- <param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{4,20})]]></param> -->
+		<param name="expression"><![CDATA[([^\d]{4,20})]]></param>
 		<message>博客标题长度必须为4至20之间</message>
 	</validator>
 
@@ -23,10 +24,10 @@
 
 	<validator type="regex">
 		<param name="fieldName">idiograph</param>
-		<param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{6,20})]]></param>
+		<!-- <param name="expression"><![CDATA[([\u4e00-\u9fa5,a-z,A-Z,0-9]{6,20})]]></param> -->
+		<param name="expression"><![CDATA[([^\d]{6,20})]]></param>
 		<message>个性签名长度必须为6至20之间</message>
 	</validator>
-
 </validators>
 
 

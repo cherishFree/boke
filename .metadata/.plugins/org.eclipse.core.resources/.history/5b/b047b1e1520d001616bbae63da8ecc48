@@ -1,6 +1,0 @@
-package com.sjf.dao;
-
-public interface CritiqueDAO {
-	//Ìí¼ÓÆÀÂÛ
-	public void addCritique(Critique critique);
-}

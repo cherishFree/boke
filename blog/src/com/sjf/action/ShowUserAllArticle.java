@@ -58,17 +58,11 @@ public class ShowUserAllArticle extends ActionSupport{
 		Result result = articleService.showUserArticleByPage(username, page);
 		page = result.getPage();
 		List<Article> all = result.getList();
-		List critiqueCounts = new ArrayList();
-		
-		for(Article article : all) {
-			critiqueCounts.add(articleService.getCritiqueCount(article.getId()));
-		}
 		
 		//把查询到的结果存在一个范围，request
 		HttpServletRequest request = ServletActionContext.getRequest();
 		request.setAttribute("all", all);
 		request.setAttribute("page", page);
-		request.setAttribute("critiqueCounts",critiqueCounts);
 		return this.SUCCESS;
 	}
 	

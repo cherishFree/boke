@@ -1,0 +1,72 @@
+package com.sjf.action;
+
+import java.util.Date;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.sjf.fenye.Result;
+import com.sjf.po.Article;
+import com.sjf.service.ArticleService;
+
+public class UpdateArticle extends ActionSupport{
+	private int id;
+	private String title;
+	private String content;
+	private int hasread;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getHasread() {
+		return hasread;
+	}
+	public void setHasread(int hasread) {
+		this.hasread = hasread;
+	}
+	private ArticleService articleService;
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public ArticleService getArticleService() {
+		return articleService;
+	}
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+	public String execute() throws Exception {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		Map session = ActionContext.getContext().getSession();
+		String username = (String) session.get("username");
+		Article article = new Article();
+		article.setId(id);
+		article.setTitle(title);
+		article.setContent(content);
+		article.setUsername(username);
+		article.setDate(new Date());
+		article.setHasread(hasread);
+		articleService.update(id, article);
+		System.out.println("updateAction");
+		request.setAttribute("all", all);
+		return this.SUCCESS;
+	}
+	
+	
+
+}
